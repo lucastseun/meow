@@ -7,10 +7,18 @@
 <script setup>
 import { ref, inject} from 'vue'
 const httpOk = inject('httpOk');
-console.log(httpOk);
+const msg = ref('hello vue3');
+const username = "Lily"
+const password = "123456"
 httpOk({
-  url: 'TEST_INFO'
-});
+    url: 'LOGIN',
+    data: {
+        username,
+        password
+    }
+}).then(res=>{
+  console.log(res);
+})
 </script>
 
 <style>

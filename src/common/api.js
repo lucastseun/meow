@@ -1,3 +1,5 @@
+const prefix = location.origin;
+
 export default {
-    TEST_INFO: '/testInfo'
+    LOGIN: prefix + '/user/login'
 }
