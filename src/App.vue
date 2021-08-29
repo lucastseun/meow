@@ -1,33 +1,16 @@
 <template>
-  <div>
-    {{msg}}
-  </div>
+    <!-- 路由出口 -->
+    <!-- 路由匹配到的组件将渲染在这里 -->
+    <router-view></router-view>
 </template>
 
 <script setup>
-import { ref, inject} from 'vue'
-const httpOk = inject('httpOk');
-const msg = ref('hello vue3');
-const username = "Lily"
-const password = "123456"
-httpOk({
-    url: 'LOGIN',
-    data: {
-        username,
-        password
-    }
-}).then(res=>{
-  console.log(res);
-})
+
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+@import './assets/style/index.less';
+#app{
+    height: 100%;
 }
 </style>
