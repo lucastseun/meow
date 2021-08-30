@@ -3,6 +3,7 @@
         <input 
             :type="type"
             :placeholder="placeholder"
+            :maxlength="maxlength"
             @input="handleInput"
         >
     </div>
@@ -18,6 +19,9 @@
         placeholder: {
             type: String
         },
+        maxlength: {
+            type: [String, Number]
+        },
         modelValue: String
     })
 
@@ -30,7 +34,7 @@
     }
 </script>
 
-<style>
+<style scoped>
 .input-wrap{
     background: #fff;
     border-radius: 5px;

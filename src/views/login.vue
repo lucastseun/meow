@@ -11,13 +11,9 @@
 
 <script setup>
     import { reactive, inject } from "vue";
-    import { useRouter, useRoute } from 'vue-router'
+    import { useRouter, useRoute } from 'vue-router';
     import Button from "../components/button.vue";
     import Input from "../components/input.vue";
-
-    defineProps({
-        msg: String
-    });
 
     const data = reactive({
         username: '',
@@ -25,16 +21,20 @@
     });
 
     const httpOk = inject('httpOk');
+    const rsaEncrypt = inject('rsaEncrypt');
 
-    const router = useRouter()
+    const router = useRouter();
 
     const handleClick = (e) => {
         httpOk({
             url: 'LOGIN',
-            data: data
+            data: {
+                username: rsaEncrypt(data.username),
+                password: rsaEncrypt(data.password)
+            }
         }).then(res=>{
             console.log(res);
-            router.replace({path: '/home'})
+            router.replace({path: '/home'});
         })
     }
 </script>

@@ -26,7 +26,7 @@
     }
 </script>
 
-<style>
+<style scoped>
 .btn-wrap{
     background: v-bind(color);
     border-radius: 5px;
