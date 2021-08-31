@@ -1,6 +1,6 @@
 <template>
     <div class="login-wrap">
-        <h1>ITURING</h1>
+        <h1>图灵系统</h1>
         <div class="login-box">
             <Input type="text" placeholder="用户名" v-model="data.username"/>
             <Input type="password" placeholder="密码" v-model="data.password"/>
@@ -11,7 +11,7 @@
 
 <script setup>
     import { reactive, inject } from "vue";
-    import { useRouter, useRoute } from 'vue-router';
+    import { useRouter } from 'vue-router';
     import Button from "../components/button.vue";
     import Input from "../components/input.vue";
 
